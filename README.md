@@ -24,3 +24,9 @@ I'm grateful to have the support of ChatGPT, an invaluable ally, providing guida
 Join me in this endeavor, and together, let's transform our collective passion for the Earth into tangible actions and solutions that will shape a sustainable future.
 
 -P
+
+## Backend
+Backend is built in AWS using CDK. It consists serverless components (S3 buckets for now) [See infra README](cdk/landinginfra/README.md)
+
+## Frontend
+Frontend is build with React and Next More info in [React dev site](https://react.dev/learn/start-a-new-react-project)
