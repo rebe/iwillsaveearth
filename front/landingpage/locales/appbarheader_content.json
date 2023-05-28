@@ -1,8 +1,8 @@
 {
     "home": "Home",
-    "about": "About",
-    "usersList": "Users List",
-    "usersAPI": "Users API",
-    "login": "Login"
+    "contribute": "Contribute",
+    "usersList": null,
+    "usersAPI": null,
+    "login": null
 }
   

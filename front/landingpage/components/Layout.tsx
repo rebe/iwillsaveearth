@@ -19,7 +19,7 @@ type Props = {
 }
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <MainContainer style={{ backgroundImage: 'url(sunrise_1920.jpg)', backgroundSize: 'cover', height: '100vh' }}>
+  <MainContainer style={{ backgroundImage: 'url(sunrise_1920.jpg)', backgroundRepeat: 'repeat-y' }}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />

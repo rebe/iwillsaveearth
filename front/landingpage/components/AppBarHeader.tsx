@@ -65,10 +65,10 @@ export default function AppBarHeader( props: any) {
             IWillSave.earth
           </StyledTypography>
           <StyledLink href="/">{content.home}</StyledLink> {' '}
-          <StyledLink href="/about">{content.about}</StyledLink> {' '}
-          <StyledLink href="/users">{content.usersList}</StyledLink> {' '}
-          <StyledLink href="/api/users">{content.usersAPI}</StyledLink>
-          <Button color="inherit">{content.login}</Button>
+          <StyledLink href="/contribute">{content.contribute}</StyledLink> {' '}
+          {content.usersList && <StyledLink href="/users">{content.usersList}</StyledLink> }
+          {content.usersAPI && <StyledLink href="/api/users">{content.usersAPI}</StyledLink>}
+          {content.login && <Button color="inherit">{content.login}</Button>}
         </Toolbar>
       </StyledAppBar>
       </ThemeProvider>

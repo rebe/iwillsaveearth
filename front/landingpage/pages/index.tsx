@@ -19,7 +19,7 @@ const IndexPage = () => (
         <p>
           Join us in this collective effort to save the Earth. Whether you're an environmental enthusiast, a sustainability advocate, or simply someone who wants to contribute, we welcome you to become a part of our community. Let's work together and demonstrate that through individual actions, we can create a greener and healthier planet for future generations.
         </p>
-        <Link href="/about">About</Link>
+        <Link href="/contribute">How to contribute?</Link>
       </div>
     </div>
   </Layout>
