@@ -66,6 +66,8 @@ export default function AppBarHeader( props: any) {
           </StyledTypography>
           <StyledLink href="/">{content.home}</StyledLink> {' '}
           <StyledLink href="/contribute">{content.contribute}</StyledLink> {' '}
+          <StyledLink href="/gpt">{content.gpt}</StyledLink> {' '}
+
           {content.usersList && <StyledLink href="/users">{content.usersList}</StyledLink> }
           {content.usersAPI && <StyledLink href="/api/users">{content.usersAPI}</StyledLink>}
           {content.login && <Button color="inherit">{content.login}</Button>}

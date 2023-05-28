@@ -1,6 +1,7 @@
 {
     "home": "Home",
     "contribute": "Contribute",
+    "gpt":"History",
     "usersList": null,
     "usersAPI": null,
     "login": null
