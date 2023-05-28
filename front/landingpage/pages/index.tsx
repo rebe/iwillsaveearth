@@ -5,11 +5,11 @@ import style from '../styles/BGContainer.module.css'
 
 const IndexPage = () => (
 
-  <Layout title="{content.title}">
+  <Layout title={content.title}>
     <div className={style.backgroundContainer}>
-      <h2>{content.title}</h2>
+      <h2>{content.header}</h2>
       <div>
-        <h3>Welcome to the IWillSave.earth project!</h3>
+        <h3>Welcome to the {content.title} project!</h3>
         <p>
           We are a passionate community dedicated to combating climate change and protecting our planet. Our mission is to inspire and empower individuals to take action, reduce their carbon footprint, and contribute towards a sustainable future for all.
         </p>

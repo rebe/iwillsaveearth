@@ -18,7 +18,7 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title = 'IWillSave.earth' }: Props) => (
   <MainContainer style={{ backgroundImage: 'url(sunrise_1920.jpg)', backgroundRepeat: 'repeat-y' }}>
     <Head>
       <title>{title}</title>
