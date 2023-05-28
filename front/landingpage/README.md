@@ -32,3 +32,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## MUI
+We use MUI material styles for more modern styleset
+
+(it has issues with REACT18 so installed with)
+npm install @mui/material @emotion/react @emotion/styled --legacy-peer-deps
+npm install @mui/icons-material --legacy-peer-deps

@@ -1,7 +1,19 @@
+import { AppBar, Box, Typography } from '@mui/material';
 import React, { ReactNode } from 'react'
 
+import AppBarHeader from './AppBarHeader';
 import Head from 'next/head'
-import Link from 'next/link'
+import { styled } from '@mui/system';
+
+const MainContainer = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+
+
+
 
 type Props = {
   children?: ReactNode
@@ -9,25 +21,22 @@ type Props = {
 }
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
+  <MainContainer>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header>
-      <nav>
-        <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
-        <Link href="/users">Users List</Link> |{' '}
-        <Link href="/api/users">Users API</Link>
-      </nav>
-    </header>
-    {children}
+    <AppBarHeader>
+    </AppBarHeader>
+    <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
+      {children}
+    </Box>
     <footer>
       <hr />
       <span>I&apos;m here to stay (Footer)</span>
     </footer>
-  </div>
-)
+  </MainContainer>
+);
 
 export default Layout
