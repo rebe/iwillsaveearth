@@ -23,11 +23,19 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StyledTypography = styled(Typography)`
+  color: #fff; /* Set the text color to white */
+  text-decoration: none;
+  margin-right: 1rem;
+  font-family: playfair;
+
+`;
+
 const theme = createTheme({
     palette: {
       primary: {
-        main: '#4caf50', // Define your desired primary color
-        light: '#a5d6a7', // Define your desired light green color
+        main: '#4caf5055', // Define your desired primary color
+        light: '#a5d6a755', // Define your desired light green color
       },
     },
   });
@@ -53,9 +61,9 @@ export default function AppBarHeader( props: any) {
           </IconButton>
 
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <StyledTypography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             IWillSave.earth
-          </Typography>
+          </StyledTypography>
           <StyledLink href="/">{content.home}</StyledLink> {' '}
           <StyledLink href="/about">{content.about}</StyledLink> {' '}
           <StyledLink href="/users">{content.usersList}</StyledLink> {' '}

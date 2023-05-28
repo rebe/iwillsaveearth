@@ -3,18 +3,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     color: black; /* Adjust text color as needed */
+}
+
+.backgroundContainer h2 {
+    text-align: left;
+    font-family: playfair;
+    color: white;
+}
+
+.backgroundContainer h3 {
+    font-family: playfair;
+    padding-left: 5%;
 }
 
 .backgroundContainer p {
     text-align: left;
     padding-left: 5%;
-    padding-right: 5%;   
+    padding-right: 5%;
+    font-size: larger;
 }
 
 .backgroundContainer div {
-    background-color: #90d3f355;
+    background-color: #90d3f388;
     padding-top: 1%;
     margin-left: 2%;
     margin-right: 2%;
