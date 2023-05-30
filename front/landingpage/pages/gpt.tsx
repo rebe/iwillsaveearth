@@ -1,10 +1,20 @@
 import Layout from '../components/Layout'
-import style from '../styles/BGContainer.module.css'
+import MainFeaturedPost from '../components/MainFeaturedPost';
 
+const mainFeaturedPost = {
+  title: 'Who are we?',
+  description: 'At the moment the project is at it\'s very beginning. I am the only developer and I am working with ChatGPT. Yes, as cracy as it sounds we are a good team.\
+   Take a look at the discussion we have had, and perhaps you can also have an idea how AI can be used in pretty much everywhere.',
+  image: 'environmental-protection_1920.jpg',
+  imageText: 'Nature',
+  linkText: 'Back to home',
+  linkTarget: '/',
+};
 const GPTPage = () => (
   <Layout title="GPTPage">
-    <div className={style.backgroundContainer}>
+    <div>
       <div>
+      <MainFeaturedPost post={mainFeaturedPost} />
       <h2>User</h2>
         <p>Hi. Today I have a really big task for us. I want to build a community to work against climate change and share ideas and best practices to reduce the footprint we have against nature. Does it sound like a good idea, and can you help me implement it?</p>
         <h2>ChatGPT</h2>

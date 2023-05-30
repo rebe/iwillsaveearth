@@ -1,17 +1,24 @@
 import Layout from '../components/Layout'
 import Link from 'next/link'
-import style from '../styles/BGContainer.module.css'
+import MainFeaturedPost from '../components/MainFeaturedPost';
+
+const mainFeaturedPost = {
+  title: 'How to contribute?',
+  description: 'Thank you for your interest in contributing to the IWillSave.earth project!\n\
+  We welcome contributions from anyone who is passionate about fighting climate change and reducing our environmental footprint. There are multiple ways you can contribute to the project, whether you have technical skills or not.',
+  image: 'earth_1920.jpg',
+  imageText: 'Earth',
+  linkText: 'Who are we?',
+  linkTarget: '/gpt',
+};
 
 const ContributePage = () => (
   <Layout title="Contribute">
-    <div className={style.backgroundContainer}>
+    <div>
       <div>
-        <h3>How to contribute</h3>
+      <MainFeaturedPost post={mainFeaturedPost} />
         <p>
-          Thank you for your interest in contributing to the <strong>IWillSave.earth project!</strong>
-          <br />
-          We welcome contributions from anyone who is passionate about fighting climate change and reducing our environmental footprint. There are multiple ways you can contribute to the project, whether you have technical skills or not.
-        </p>
+           </p>
         <p>
         <strong>Development:</strong> If you have programming skills, you can contribute by improving the website's functionality, adding new features, or fixing bugs. To get started with development, follow these steps:
         </p>
