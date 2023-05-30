@@ -39,7 +39,7 @@ const Layout = ({ children, title = 'IWillSave.earth' }: Props) => (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <AppBarHeader title="IWillSave.earth" sections={sections}> </AppBarHeader>
+        <AppBarHeader title="IWillSave.earth" sections={sections} />
         <main>
           <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
             {children}

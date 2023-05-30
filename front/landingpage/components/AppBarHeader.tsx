@@ -61,7 +61,7 @@ export default function AppBarHeader( props: any) {
           </IconButton>
 
 
-          <StyledTypography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+          <StyledTypography variant="h5" sx={{ flexGrow: 1 }}>
             IWillSave.earth
           </StyledTypography>
           <StyledLink href="/">{content.home}</StyledLink> {' '}

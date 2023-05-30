@@ -26,7 +26,7 @@ const IndexPage = () => (
           By sharing ideas, best practices, and practical solutions, we aim to create a collaborative space where individuals can learn, engage, and make a positive impact. Together, we believe that every small step counts towards making a significant difference in the fight against climate change.
         </p>
         <p>
-          Join us in this collective effort to save the Earth. Whether you're an environmental enthusiast, a sustainability advocate, or simply someone who wants to contribute, we welcome you to become a part of our community. Let's work together and demonstrate that through individual actions, we can create a greener and healthier planet for future generations.
+          Join us in this collective effort to save the Earth. Whether you&pos;re an environmental enthusiast, a sustainability advocate, or simply someone who wants to contribute, we welcome you to become a part of our community. Let&pos;s work together and demonstrate that through individual actions, we can create a greener and healthier planet for future generations.
         </p>
       </div>
     </div>
