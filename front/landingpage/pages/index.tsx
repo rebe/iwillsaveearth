@@ -9,7 +9,7 @@ const mainFeaturedPost = {
   image: 'sunrise_1920.jpg',
   imageText: 'Sunrise',
   linkText: 'How to contribute…',
-  linkTarget: 'contribute',
+  linkTarget: 'contribute.html',
 };
 
 const IndexPage = () => (

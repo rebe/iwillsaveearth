@@ -9,7 +9,7 @@ const mainFeaturedPost = {
   image: 'earth_1920.jpg',
   imageText: 'Earth',
   linkText: 'Who are we?',
-  linkTarget: '/gpt',
+  linkTarget: 'gpt.html',
 };
 
 const ContributePage = () => (
@@ -55,7 +55,7 @@ const ContributePage = () => (
           Happy contributing and sharing!
         </p>
         <p>
-          <Link href="/">Go home</Link>
+          <Link href="/index.html">Go home</Link>
         </p>
       </div>
     </div>

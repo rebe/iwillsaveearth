@@ -29,4 +29,7 @@ Join me in this endeavor, and together, let's transform our collective passion f
 Backend is built in AWS using CDK. It consists serverless components (S3 buckets for now) [See infra README](cdk/landinginfra/README.md)
 
 ## Frontend
-Frontend is build with React and Next More info in [React dev site](https://react.dev/learn/start-a-new-react-project)
+Frontend is build with React and Next and MUI
+
+More info in [React dev site](https://react.dev/learn/start-a-new-react-project)
+[MUI SITE](https://mui.com/)

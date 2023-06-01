@@ -8,7 +8,7 @@ const mainFeaturedPost = {
   image: 'environmental-protection_1920.jpg',
   imageText: 'Nature',
   linkText: 'Back to home',
-  linkTarget: '/',
+  linkTarget: '/index.html',
 };
 const GPTPage = () => (
   <Layout title="GPTPage">

@@ -20,9 +20,9 @@ type Props = {
 }
 
 const sections = [
-  { title: 'Home', url: '/' },
-  { title: 'Contribute', url: 'contribute' },
-  { title: 'History', url: 'gpt' },
+  { title: 'Home', url: '/index.html' },
+  { title: 'Contribute', url: 'contribute.html' },
+  { title: 'History', url: 'gpt.html' },
 ];
 
 
