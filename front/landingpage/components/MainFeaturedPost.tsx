@@ -4,10 +4,20 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
-import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 
-function MainFeaturedPost(props) {
+interface MainFeaturedPostProps {
+  post: {
+    description: string;
+    image: string;
+    imageText: string;
+    linkText: string;
+    linkTarget: string;
+    title: string;
+  };
+}
+
+export default function MainFeaturedPost(props: MainFeaturedPostProps) {
   const { post } = props;
 
   return (
@@ -59,15 +69,3 @@ function MainFeaturedPost(props) {
     </Paper>
   );
 }
-
-MainFeaturedPost.propTypes = {
-  post: PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    imageText: PropTypes.string.isRequired,
-    linkText: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
-export default MainFeaturedPost;

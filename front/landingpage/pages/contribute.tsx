@@ -1,19 +1,22 @@
 import Layout from '../components/Layout'
 import Link from 'next/link'
 import MainFeaturedPost from '../components/MainFeaturedPost';
+import { ReactElement } from 'react';
+
+const staticbuild = process.env.STATIC_BUILD;
+const homelink = staticbuild?'../index.html':'/'
 
 const mainFeaturedPost = {
   title: 'How to contribute?',
   description: 'Thank you for your interest in contributing to the IWillSave.earth project!\n\
   We welcome contributions from anyone who is passionate about fighting climate change and reducing our environmental footprint. There are multiple ways you can contribute to the project, whether you have technical skills or not.',
-  image: 'earth_1920.jpg',
-  imageText: 'Earth',
-  linkText: 'Who are we?',
-  linkTarget: 'gpt.html',
+  image: 'william-white-TZCppMjaOHU-unsplash.jpg',
+  imageText: 'Photo by <a href="https://unsplash.com/@wrwhite3?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">William White</a> on <a href="https://unsplash.com/s/photos/community?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+  linkText: 'Story behind...',
+  linkTarget: staticbuild?'./story.html':'/story',
 };
 
 const ContributePage = () => (
-  <Layout title="Contribute">
     <div>
       <div>
       <MainFeaturedPost post={mainFeaturedPost} />
@@ -55,11 +58,18 @@ const ContributePage = () => (
           Happy contributing and sharing!
         </p>
         <p>
-          <Link href="/index.html">Go home</Link>
+          <Link href={homelink}>Go to mainpage</Link>
         </p>
       </div>
     </div>
-  </Layout>
 )
+
+ContributePage.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout title={mainFeaturedPost.title}>
+      {page}
+    </Layout>
+  );
+};
 
 export default ContributePage

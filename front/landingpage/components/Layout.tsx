@@ -19,10 +19,12 @@ type Props = {
   title?: string
 }
 
+const staticbuild = process.env.STATIC_BUILD;
+
 const sections = [
-  { title: 'Home', url: '/index.html' },
-  { title: 'Contribute', url: 'contribute.html' },
-  { title: 'History', url: 'gpt.html' },
+  { title: 'Home', url: '/' },
+  { title: 'Contribute', url: staticbuild?'/contribute.html':'/contribute' },
+  { title: 'Story', url: staticbuild?'/story.html':'/story' },
 ];
 
 
