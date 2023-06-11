@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import { MouseEvent } from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -21,11 +22,18 @@ interface SidebarProps {
   title: string;
 }
 
+interface ContextArchive {
+  linkId: number;
+}
+
 export default function Sidebar(props: SidebarProps) {
   const { archives, description, social, title } = props;
-  const handleLinkClick = (event: { currentTarget: { getAttribute: (arg0: string) => any; }; }) => {
-    const contextarchive = event.currentTarget.getAttribute('data-context'); 
-    props.linkCallback(contextarchive.linkId);
+  const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const contextarchive = event.currentTarget.getAttribute('data-context') as unknown as ContextArchive;
+    if (contextarchive) {
+      props.linkCallback(contextarchive.linkId);
+    }
   };
   return (
     <Grid item xs={12} md={4}>

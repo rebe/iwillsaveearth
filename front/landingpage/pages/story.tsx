@@ -1,3 +1,4 @@
+import Markdown, { MarkdownToJSX } from 'markdown-to-jsx';
 import React, { useState } from 'react';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -5,10 +6,9 @@ import Grid from '@mui/material/Grid';
 import Layout from '../components/Layout'
 import Main from '../components/Main';
 import MainFeaturedPost from '../components/MainFeaturedPost';
-import Markdown from 'markdown-to-jsx';
 import { ReactElement } from 'react';
 import Sidebar from '../components/Sidebar';
-import frontendpage from '../data/log_chat_28_05_2023_frontend.md'
+//import frontendpage from '../data/log_chat_28_05_2023_frontend.md'
 import infrapage from '../data/log_chat_18_05_2023_infra.md'
 import startpage from '../data/log_chat_13_05_2023_start.md'
 
@@ -16,7 +16,7 @@ const staticbuild = process.env.STATIC_BUILD;
 const links = [
   startpage,
   infrapage,
-  //frontendpage
+//  frontendpage
 ];
 
 
@@ -43,6 +43,7 @@ const StoryPage = () => {
     archives: [
       { title: 'Project startup', url: '', linkId: 0 },
       { title: 'Building infra', url: '', linkId: 1 },
+//      { title: 'Building frontend', url: '', linkId: 2 },
     ],
     linkCallback: handleLinkClick,
     social: [
@@ -51,12 +52,17 @@ const StoryPage = () => {
       //{ name: 'Facebook', icon: FacebookIcon },
     ],
   };
+  // Define the options
+  const markdownOptions: MarkdownToJSX.Options = {
+    disableParsingRawHTML: true,
+  };
+
   return (
       <div>
         <div>
         <MainFeaturedPost post={mainFeaturedPost} />
         <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="Discussion with AI" posts={links} />
+            <Main title="Discussion with AI" posts={[links[selectedLinkIndex]]} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
@@ -65,14 +71,6 @@ const StoryPage = () => {
               linkCallback={sidebar.linkCallback}
             />
           </Grid>
-        <div>
-          {links.map((link, index) => (
-            <button key={index} onClick={() => handleLinkClick(index)}>
-              Link {index + 1}
-            </button>
-          ))}
-        </div>
-        <Markdown id="textpage" children={links[selectedLinkIndex]} />
         </div>
       </div>
   )
