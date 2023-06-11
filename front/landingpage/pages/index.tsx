@@ -1,7 +1,7 @@
 import Layout from '../components/Layout'
 import MainFeaturedPost from '../components/MainFeaturedPost';
 import { ReactElement } from 'react';
-const staticbuild = process.env.STATIC_BUILD;
+import routes from '../routes';
 
 const mainFeaturedPost = {
   title: 'IWillSave.earth community',
@@ -10,8 +10,9 @@ const mainFeaturedPost = {
   image: 'sunrise_1920.jpg',
   imageText: 'Sunrise',
   linkText: 'How to contribute…',
-  linkTarget: staticbuild?'./contribute.html':'/contribute',
+  linkTarget: routes.contribute,
 };
+
 
 const IndexPage = () => (
     <div >

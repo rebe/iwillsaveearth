@@ -10,6 +10,7 @@ import { ReactElement } from 'react';
 import Sidebar from '../components/Sidebar';
 //import frontendpage from '../data/log_chat_28_05_2023_frontend.md'
 import infrapage from '../data/log_chat_18_05_2023_infra.md'
+import routes from '../routes';
 import startpage from '../data/log_chat_13_05_2023_start.md'
 
 const staticbuild = process.env.STATIC_BUILD;
@@ -19,8 +20,6 @@ const links = [
 //  frontendpage
 ];
 
-
-
 const mainFeaturedPost = {
   title: 'Story',
   description: 'At the moment the project is at it\'s very beginning. I am the only developer and I am working with ChatGPT. Yes, as cracy as it sounds we are a good team.\
@@ -28,13 +27,19 @@ const mainFeaturedPost = {
   image: 'environmental-protection_1920.jpg',
   imageText: 'Nature',
   linkText: 'Back to main page.',
-  linkTarget: staticbuild?'../index.html':'/',
+  linkTarget: routes.home,
 };
 const StoryPage = () => {
-  const [selectedLinkIndex, setSelectedLinkIndex] = useState(0);
+  const [visibleLinksInPage, setVisibleLinksInPage] = useState([links[0]]);
+  // Update the array state
+  const updateArray = (index: number) => {
+    console.log("Index ", index);
+    setVisibleLinksInPage([links[index]]);
+  };
 
   const handleLinkClick = (index: number) => {
-    setSelectedLinkIndex(index);
+    console.log("handleLinkClick", index);
+    updateArray(index);
   };
   const sidebar = {
     title: 'Quicklinks',
@@ -62,7 +67,7 @@ const StoryPage = () => {
         <div>
         <MainFeaturedPost post={mainFeaturedPost} />
         <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="Discussion with AI" posts={[links[selectedLinkIndex]]} />
+            <Main title="Discussion with AI" posts={visibleLinksInPage} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

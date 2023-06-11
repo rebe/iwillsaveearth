@@ -6,6 +6,8 @@ import { MouseEvent } from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { isNumberObject } from 'util/types';
+import { isNumericLiteral } from 'typescript';
 
 interface SidebarProps {
   archives: Array<{
@@ -31,8 +33,10 @@ export default function Sidebar(props: SidebarProps) {
   const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     const contextarchive = event.currentTarget.getAttribute('data-context') as unknown as ContextArchive;
-    if (contextarchive) {
-      props.linkCallback(contextarchive.linkId);
+    console.log("cArch", contextarchive, typeof contextarchive);
+    const index = Number(contextarchive);
+    if (!Number.isNaN(index)) {
+      props.linkCallback(index);
     }
   };
   return (

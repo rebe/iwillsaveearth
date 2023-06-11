@@ -6,6 +6,7 @@ import AppBarHeader from './Header';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Head from 'next/head'
 import Link from '@mui/material/Link';
+import routes from '../routes';
 import { styled } from '@mui/system';
 
 const MainContainer = styled(Box)`
@@ -23,8 +24,8 @@ const staticbuild = process.env.STATIC_BUILD;
 
 const sections = [
   { title: 'Home', url: '/' },
-  { title: 'Contribute', url: staticbuild?'/contribute.html':'/contribute' },
-  { title: 'Story', url: staticbuild?'/story.html':'/story' },
+  { title: 'Contribute', url: routes.contribute },
+  { title: 'Story', url: routes.story },
 ];
 
 

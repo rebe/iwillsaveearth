@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import { useRouter } from 'next/router';
 
 interface MainFeaturedPostProps {
   post: {
@@ -19,6 +20,12 @@ interface MainFeaturedPostProps {
 
 export default function MainFeaturedPost(props: MainFeaturedPostProps) {
   const { post } = props;
+  const router = useRouter();
+
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    router.push(post.linkTarget);
+  };
 
   return (
     <Paper
@@ -60,7 +67,7 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href={post.linkTarget}>
+            <Link variant="subtitle1" onClick={handleLinkClick}>
               {post.linkText}
             </Link>
           </Box>

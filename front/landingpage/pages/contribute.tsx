@@ -2,9 +2,9 @@ import Layout from '../components/Layout'
 import Link from 'next/link'
 import MainFeaturedPost from '../components/MainFeaturedPost';
 import { ReactElement } from 'react';
+import routes from '../routes';
 
-const staticbuild = process.env.STATIC_BUILD;
-const homelink = staticbuild?'../index.html':'/'
+const homelink = routes.home
 
 const mainFeaturedPost = {
   title: 'How to contribute?',
@@ -13,7 +13,7 @@ const mainFeaturedPost = {
   image: 'william-white-TZCppMjaOHU-unsplash.jpg',
   imageText: 'Photo by <a href="https://unsplash.com/@wrwhite3?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">William White</a> on <a href="https://unsplash.com/s/photos/community?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
   linkText: 'Story behind...',
-  linkTarget: staticbuild?'./story.html':'/story',
+  linkTarget: routes.story,
 };
 
 const ContributePage = () => (
