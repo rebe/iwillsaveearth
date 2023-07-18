@@ -20,11 +20,10 @@ type Props = {
   title?: string
 }
 
-const staticbuild = process.env.STATIC_BUILD;
-
 const sections = [
   { title: 'Home', url: '/' },
   { title: 'Contribute', url: routes.contribute },
+  { title: 'Actions', url: routes.actions },
   { title: 'Story', url: routes.story },
 ];
 
