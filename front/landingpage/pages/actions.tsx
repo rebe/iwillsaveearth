@@ -4,6 +4,7 @@ import { Grid } from '@mui/material';
 import Layout from '../components/Layout'
 import Link from 'next/link'
 import MainFeaturedPost from '../components/MainFeaturedPost';
+import { MouseEvent } from 'react';
 import { ReactElement } from 'react';
 import routes from '../routes';
 
@@ -26,6 +27,7 @@ const featuredPosts = [
       'Conserve energy by using energy-efficient appliances, turning off lights and electronics when not in use, and optimizing home heating and cooling.',
     image: 'john-cameron-F_EooJ3-uTs-unsplash.jpg',
     imageLabel: 'Photo by <a href="https://unsplash.com/@john_cameron?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Cameron</a> on <a href="https://unsplash.com/s/photos/Reduce-energy-consumption?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+    clickTarget: routes.reduceenergy
   },
   {
     title: 'Transition to clean energy',
@@ -82,7 +84,8 @@ const featuredPosts = [
       ' Trees absorb carbon dioxide and help mitigate climate change. Participate in tree-planting initiatives or support organizations that work towards reforestation efforts.',
     image: 'noah-buscher-x8ZStukS2PM-unsplash.jpg',
     imageLabel: 'Photo by <a href="https://unsplash.com/@noahbuscher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Noah Buscher</a> on <a href="https://unsplash.com/s/photos/Support-sustainable-businesses?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
-  },  {
+  },
+  {
     title: 'Advocate for policy changes',
     date: '9',
     description:
@@ -99,7 +102,6 @@ const featuredPosts = [
     imageLabel: 'Photo by <a href="https://unsplash.com/@claybanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clay Banks</a> on <a href="https://unsplash.com/s/photos/Educate-and-raise-awareness?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
   },
 ];
-
 const ContributePage = () => (
     <div>
       <div>
@@ -111,7 +113,7 @@ const ContributePage = () => (
         </p>
         <Grid container spacing={4}>
             {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
+              <FeaturedPost key={post.title} post={post}/>
             ))}
           </Grid>
         <p>

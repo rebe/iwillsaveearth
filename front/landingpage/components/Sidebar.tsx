@@ -6,8 +6,6 @@ import { MouseEvent } from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { isNumberObject } from 'util/types';
-import { isNumericLiteral } from 'typescript';
 
 interface SidebarProps {
   archives: Array<{

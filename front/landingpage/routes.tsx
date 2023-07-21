@@ -5,6 +5,8 @@ const routes = {
     contribute: staticbuild?'./contribute.html':'/contribute',
     story: staticbuild?'./story.html':'/story',
     actions: staticbuild?'./actions.html':'/actions',
+    reduceenergy: staticbuild?'./reduceenergy.html':'/reduceenergy',
   };
   
   export default routes;
+  
