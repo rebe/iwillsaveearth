@@ -1,10 +1,13 @@
 import * as React from 'react';
-import Toolbar from '@mui/material/Toolbar';
+
+import { CredentialResponse, GoogleLogin, GoogleLoginProps } from '@react-oauth/google';
+
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
-import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import SearchIcon from '@mui/icons-material/Search';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
 interface HeaderProps {
   sections: ReadonlyArray<{
@@ -14,13 +17,21 @@ interface HeaderProps {
   title: string;
 }
 
+const responseMessage = (response: CredentialResponse) => {
+  console.log("header:" + response);
+  console.log("User credential: " + response.credential + " clientid: " + response.clientId + " select_by " + response.select_by)
+};
+const errorMessage = (error?: string) => {
+  console.log("header: " + error);
+};
+
 export default function Header(props: HeaderProps) {
   const { sections, title } = props;
 
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Button size="small">Subscribe</Button>
+        <Button size="small" disabled >Subscribe</Button>
         <Typography
           component="h2"
           variant="h5"
@@ -31,12 +42,10 @@ export default function Header(props: HeaderProps) {
         >
           {title}
         </Typography>
-        <IconButton>
+        <IconButton disabled>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
+        <GoogleLogin onSuccess={responseMessage} />
       </Toolbar>
       <Toolbar
         component="nav"
