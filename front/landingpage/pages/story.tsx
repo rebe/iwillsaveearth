@@ -1,24 +1,15 @@
-import Markdown, { MarkdownToJSX } from 'markdown-to-jsx';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Grid from '@mui/material/Grid';
 import Layout from '../components/Layout'
-import Main from '../components/Main';
 import MainFeaturedPost from '../components/MainFeaturedPost';
+import PartialHTML from '../components/PartialHTML';
 import { ReactElement } from 'react';
 import Sidebar from '../components/Sidebar';
-//import frontendpage from '../data/log_chat_28_05_2023_frontend.md'
-import infrapage from '../data/log_chat_18_05_2023_infra.md'
 import routes from '../routes';
-import startpage from '../data/log_chat_13_05_2023_start.md'
 
 const staticbuild = process.env.STATIC_BUILD;
-const links = [
-  startpage,
-  infrapage,
-//  frontendpage
-];
 
 const mainFeaturedPost = {
   title: 'Story',
@@ -30,24 +21,24 @@ const mainFeaturedPost = {
   linkTarget: routes.home,
 };
 const StoryPage = () => {
-  const [visibleLinksInPage, setVisibleLinksInPage] = useState([links[0]]);
-  // Update the array state
-  const updateArray = (index: number) => {
-    console.log("Index ", index);
-    setVisibleLinksInPage([links[index]]);
+
+  const partialPageRef = useRef<any>(null);
+  // Function to set the active component from outside
+  const setActiveComponentFromOutside = (componentNumber: number) => {
+    partialPageRef.current?.setActiveComponent(componentNumber);
   };
 
   const handleLinkClick = (index: number) => {
     console.log("handleLinkClick", index);
-    updateArray(index);
+    setActiveComponentFromOutside(index);
   };
   const sidebar = {
-    title: 'Quicklinks',
+    title: 'Blog links',
     description:
-      'Quickly jump into discussions happened during building the site. Contains also instructions how to build parts of this site.',
+      'Jump into project history. See what I have been discussing with ChatGPT. Contains also instructions how to build parts of this site. To be continued...',
     archives: [
-      { title: 'Project startup', url: '', linkId: 0 },
-      { title: 'Building infra', url: '', linkId: 1 },
+      { title: '2023 05 Project startup', url: '', linkId: 0 },
+      { title: '2023 06 First content', url: '', linkId: 1 },
 //      { title: 'Building frontend', url: '', linkId: 2 },
     ],
     linkCallback: handleLinkClick,
@@ -57,17 +48,13 @@ const StoryPage = () => {
       //{ name: 'Facebook', icon: FacebookIcon },
     ],
   };
-  // Define the options
-  const markdownOptions: MarkdownToJSX.Options = {
-    disableParsingRawHTML: true,
-  };
 
   return (
       <div>
         <div>
         <MainFeaturedPost post={mainFeaturedPost} />
         <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="Discussion with AI" posts={visibleLinksInPage} />
+            <PartialHTML ref={partialPageRef}></PartialHTML>
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
