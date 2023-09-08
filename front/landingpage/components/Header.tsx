@@ -1,10 +1,11 @@
 import * as React from 'react';
-import Toolbar from '@mui/material/Toolbar';
+
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
-import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import SearchIcon from '@mui/icons-material/Search';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
 interface HeaderProps {
   sections: ReadonlyArray<{
@@ -20,7 +21,7 @@ export default function Header(props: HeaderProps) {
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Button size="small">Subscribe</Button>
+        <Button size="small" disabled>Subscribe</Button>
         <Typography
           component="h2"
           variant="h5"
@@ -31,10 +32,10 @@ export default function Header(props: HeaderProps) {
         >
           {title}
         </Typography>
-        <IconButton>
+        <IconButton disabled>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
+        <Button variant="outlined" size="small" disabled>
           Sign up
         </Button>
       </Toolbar>
